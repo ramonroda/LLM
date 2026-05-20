@@ -125,15 +125,54 @@ I a la terminal de l'API es veu com a la imatge:
 
 <img width="628" height="395" alt="image" src="https://github.com/user-attachments/assets/0008de84-9459-4817-ab5a-4f636da5f9e6" />
 
-Això demostra que també es poden moure dades en format XML.
+En tots dos casos, les dades viatgen des de l’ERP fins a l’aplicació externa mitjançant una API. La diferència principal és la manera com s’estructuren les dades: JSON utilitza claus i valors, mentre que XML utilitza etiquetes.
+
+Aquesta pràctica mostra que els formats JSON i XML serveixen perquè sistemes diferents puguin intercanviar informació de manera automàtica. En un cas real, aquest procés podria servir per enviar factures, comandes, dades de clients o informació d’estoc entre un ERP, una botiga online, una empresa logística o una administració pública.
 
 ### Què és EDI?
 
-<img width="1000" height="574" alt="image" src="https://github.com/user-attachments/assets/fc6ae22a-edc7-4ae3-a366-74b4438287b8" />
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/bfc4576d-c41f-45b6-bffb-c59665cdf787" />
 
 L’**EDI** (*Electronic Data Interchange*) és l’intercanvi electrònic de documents comercials entre empreses seguint formats estandarditzats. Pot servir per enviar comandes, albarans, factures, avisos d’expedició o confirmacions de recepció sense haver d’introduir les dades manualment.
 
 Encara té molta rellevància en el sector logístic i en la cadena de subministrament, perquè permet automatitzar la comunicació entre fabricants, proveïdors, magatzems, distribuïdors i clients. Encara avui moltes empreses utilitzen estàndards EDI per automatitzar transaccions comercials entre sistemes.
+
+## Exemple real d’empresa que utilitza EDI: Walmart
+
+Un exemple real d’empresa que utilitza EDI és **Walmart**, una de les cadenes de distribució i venda al detall més grans del món.
+
+<img width="1000" height="800" alt="image" src="https://github.com/user-attachments/assets/3f7c2144-9739-4347-8875-06c1a83ad756" />
+
+Walmart utilitza EDI per comunicar-se amb els seus proveïdors i intercanviar documents comercials de manera automàtica. Segons la documentació per a proveïdors de Walmart, els venedors poden utilitzar una interfície EDI per transferir dades cap a Walmart.com i des de Walmart.com. Aquest sistema permet enviar i rebre informació sense haver d’introduir manualment les dades en cada plataforma.
+
+Alguns documents habituals que es poden intercanviar mitjançant EDI són:
+
+| Document EDI | Nom del document | Funció |
+|---|---|---|
+| EDI 850 | Purchase Order | Walmart envia una comanda de compra al proveïdor. |
+| EDI 855 | Purchase Order Acknowledgment | El proveïdor confirma si accepta o pot complir la comanda. |
+| EDI 856 | Advance Ship Notice | El proveïdor informa del contingut i detalls de l’enviament abans que arribi. |
+| EDI 810 | Invoice | El proveïdor envia la factura electrònica a Walmart. |
+| EDI 846 | Inventory Feed | El proveïdor informa de l’estoc disponible. |
+
+### Exemple de funcionament
+
+Un cas pràctic seria el següent:
+
+1. Walmart detecta que necessita més unitats d’un producte.
+2. El seu sistema envia automàticament una comanda al proveïdor mitjançant un document **EDI 850**.
+3. El proveïdor rep la comanda al seu ERP i respon amb un **EDI 855** per confirmar-la.
+4. Quan prepara l’enviament, el proveïdor envia un **EDI 856** amb la informació de l’expedició.
+5. Finalment, el proveïdor envia la factura amb un **EDI 810**.
+
+Aquest procés evita haver d’enviar correus electrònics o introduir dades manualment. Per això, l’EDI continua sent molt important en empreses de logística, distribució i venda al detall.
+
+### Relació amb ERP
+
+En aquest cas, l’ERP del proveïdor pot estar connectat amb la plataforma de Walmart. Quan arriba una comanda EDI 850, el sistema la pot convertir automàticament en una comanda de venda dins de l’ERP. Després, el mateix ERP pot generar l’avís d’enviament i la factura corresponent.
+
+Això demostra que l’EDI permet que dues empreses intercanviïn dades comercials de manera estructurada, ràpida i automatitzada.
+
 
 ### Exemple de codi JSON d’una comanda de compra
 
@@ -172,6 +211,32 @@ Encara té molta rellevància en el sector logístic i en la cadena de subminist
 ```
 
 Aquest fragment representa una comanda de compra. Les dades estan organitzades en camps i objectes perquè una altra aplicació les pugui interpretar automàticament.
+
+### Demostració pràctica d’una comanda de compra en JSON
+
+Per demostrar com es pot utilitzar JSON en un entorn ERP, he creat un fitxer anomenat `comanda_compra.json` que representa una comanda de compra. Aquest fitxer conté informació estructurada sobre el número de comanda, la data, el client, el proveïdor, els productes i l’import total.
+
+Primer he creat la carpeta "demo_comanda_json"
+
+<img width="360" height="144" alt="image" src="https://github.com/user-attachments/assets/6b0d7216-fa50-4dbb-8706-96623b08a3b8" />
+
+Dins he creat "comanda_compra.json"
+
+<img width="522" height="740" alt="image" src="https://github.com/user-attachments/assets/4155e63b-0c48-48f7-824a-beea220cb04f" />
+
+Ara he validat el json amb aquesta comanda "python3 -m json.tool comanda_compra.json", com mostra el json ordenat significa que te una estructura valida:
+
+<img width="630" height="761" alt="image" src="https://github.com/user-attachments/assets/43567544-89bb-4a55-a81e-d67b49cd2edf" />
+
+Tot seguit he creat un petit programa que llegeix la comanda 
+
+<img width="673" height="538" alt="image" src="https://github.com/user-attachments/assets/95e92b95-2fde-41fb-869e-0cfb73ba7608" />
+
+Al executar-lo l’aplicació mostra per pantalla les dades de la comanda, com el client, el proveïdor, els productes i el total.
+
+<img width="374" height="514" alt="image" src="https://github.com/user-attachments/assets/50f8a4a6-c924-4e9c-91b0-572333988ee3" />
+
+Aquesta pràctica demostra que JSON permet representar dades empresarials de forma estructurada i que una aplicació externa pot llegir aquestes dades automàticament. En un cas real, un ERP podria enviar una comanda en JSON a una botiga online, a un proveïdor o a una empresa logística mitjançant una API.
 
 ---
 
@@ -296,3 +361,5 @@ Personalment, crec que aquesta activitat m’ha ajudat a entendre que els llengu
 - Documentació oficial d’Odoo sobre vistes XML: <https://www.odoo.com/documentation/19.0/developer/tutorials/server_framework_101/06_basicviews.html>
 - Informació sobre FacturaE: <https://www.facturae.gob.es>
 - Informació sobre estàndards EDI: <https://www.gs1.org/standards/edi>
+- Documentació oficial de Walmart Developers sobre la interfície EDI per a proveïdors: <https://developer.walmart.com/suppliers/docs/electronic-data-exchange-edi-interface>
+- Guia oficial de Walmart sobre el document EDI 850 Purchase Order: <https://developer.walmart.com/suppliers/docs/850-purchase-order>
