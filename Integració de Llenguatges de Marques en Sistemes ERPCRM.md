@@ -16,23 +16,65 @@ Un **CRM** (*Customer Relationship Management*) és un sistema orientat a gestio
 
 <img width="1000" height="1000" alt="image" src="https://github.com/user-attachments/assets/2b678a01-db99-4499-bdf9-fb7bee9d1958" />
 
-### Exemples d’ERP
+##  Comparativa entre ERP i CRM
 
-| Tipus | Exemples |
-|---|---|
-| Programari lliure / Open Source | Odoo Community, ERPNext, Dolibarr |
-| Propietari | SAP ERP / SAP S/4HANA, Microsoft Dynamics 365, Oracle NetSuite |
+Tot i que els sistemes ERP i CRM poden estar connectats dins d’una mateixa empresa, no tenen exactament la mateixa funció. L’ERP se centra sobretot en la gestió interna de l’empresa, mentre que el CRM està més enfocat en la relació amb els clients.
+
+| Aspecte | ERP | CRM |
+|---|---|---|
+| Significat | *Enterprise Resource Planning* | *Customer Relationship Management* |
+| Objectiu principal | Gestionar i integrar els processos interns de l’empresa | Gestionar la relació amb els clients |
+| Àrees principals | Comptabilitat, compres, vendes, magatzem, producció, recursos humans i facturació | Vendes, màrqueting, atenció al client i seguiment comercial |
+| Tipus de dades que gestiona | Productes, factures, proveïdors, estoc, nòmines, comandes i comptabilitat | Clients, contactes, oportunitats de venda, incidències i campanyes |
+| Exemple d’ús | Controlar l’estoc d’un producte i generar una factura | Registrar una trucada amb un client i fer seguiment d’una oportunitat de venda |
+| Departaments que l’utilitzen | Administració, finances, logística, producció, compres i direcció | Equip comercial, màrqueting i atenció al client |
+| Benefici principal | Millora l’organització interna i evita duplicar dades | Millora la comunicació amb els clients i ajuda a augmentar les vendes |
+| Exemples de programari | Odoo, ERPNext, SAP, Microsoft Dynamics 365, Oracle NetSuite | SuiteCRM, Odoo CRM, Salesforce, HubSpot CRM, Microsoft Dynamics 365 Sales |
+
+### Explicació tipo resum
+
+Un **ERP** ajuda l’empresa a organitzar els seus recursos interns. Per exemple, quan es ven un producte, l’ERP pot actualitzar automàticament l’estoc, generar la factura i registrar el moviment comptable.
+
+Un **CRM**, en canvi, ajuda a gestionar la relació amb els clients. Per exemple, permet guardar les dades d’un client, veure quines compres ha fet, registrar incidències o programar accions comercials.
+
+Per tant, es podria dir que l’ERP mira més cap a l’interior de l’empresa, mentre que el CRM mira més cap a l’exterior, especialment cap als clients.
+
+##  Exemples de programari ERP i CRM
+
+A continuació es mostren alguns exemples de sistemes ERP i CRM, diferenciant entre programari lliure (*Open Source*) i programari propietari.
+
+### Exemples d'ERP
+
+| Tipus de programari | Exemple | Descripció breu |
+|---|---|---|
+| Open Source | Odoo Community | ERP modular amb aplicacions de vendes, compres, inventari, facturació i CRM. |
+| Open Source | ERPNext | ERP de codi obert orientat a petites i mitjanes empreses. |
+| Open Source | Dolibarr | ERP i CRM lliure, senzill i utilitzat per gestionar clients, factures, productes i projectes. |
+| Propietari | SAP S/4HANA | ERP empresarial molt utilitzat en grans empreses. |
+| Propietari | Microsoft Dynamics 365 | Plataforma empresarial de Microsoft amb funcions ERP i CRM. |
+| Propietari | Oracle NetSuite | ERP al núvol orientat a la gestió empresarial integral. |
 
 ### Exemples de CRM
 
-| Tipus | Exemples |
-|---|---|
-| Programari lliure / Open Source | SuiteCRM, Odoo CRM Community, EspoCRM |
-| Propietari | Salesforce, HubSpot CRM, Microsoft Dynamics 365 Sales |
+| Tipus de programari | Exemple | Descripció breu |
+|---|---|---|
+| Open Source | SuiteCRM | CRM lliure per gestionar clients, vendes, campanyes i incidències. |
+| Open Source | EspoCRM | CRM de codi obert per gestionar contactes, empreses i oportunitats comercials. |
+| Open Source | Odoo CRM Community | Mòdul CRM d’Odoo per gestionar oportunitats, clients i activitats comercials. |
+| Propietari | Salesforce | Un dels CRM comercials més utilitzats a nivell mundial. |
+| Propietari | HubSpot CRM | CRM propietari molt utilitzat en vendes, màrqueting i atenció al client. |
+| Propietari | Microsoft Dynamics 365 Sales | CRM de Microsoft orientat a la gestió comercial i relació amb clients. |
 
+### Explicació breu
+
+Els sistemes **Open Source** permeten accedir al codi font i, en molts casos, adaptar el programa a les necessitats de l’empresa. Això pot ser molt útil per a empreses que volen personalitzar el sistema o reduir costos de llicències.
+
+Els sistemes **propietaris**, en canvi, solen requerir el pagament de llicències o subscripcions. Normalment ofereixen suport professional, actualitzacions gestionades pel proveïdor i una infraestructura més orientada a grans empreses.
 
 
 ### Instal·lació On-premise i SaaS
+
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/0e1842f9-2e7a-4c3c-8a6d-cb52a62d184e" />
 
 Una instal·lació **On-premise** significa que el programari s’instal·la en servidors propis de l’empresa. L’empresa és responsable del manteniment, les còpies de seguretat, la seguretat, les actualitzacions i la infraestructura.
 
@@ -52,7 +94,42 @@ Per exemple, una botiga online pot enviar una comanda a l’ERP en format JSON. 
 
 JSON és molt habitual en APIs modernes perquè és més lleuger i fàcil de treballar amb aplicacions web. XML, en canvi, continua sent molt important en entorns més formals o regulats, com la facturació electrònica, alguns serveis bancaris o intercanvis amb administracions públiques.
 
+#### Demostracio Real de com seria:
+Primer he creat les carpetes per posar dins els .py
+
+<img width="405" height="139" alt="image" src="https://github.com/user-attachments/assets/09cd9912-5ea3-463d-836f-c14f2dc21e6a" />
+
+Tot seguit he creat l'aplicacio externa que rep les dades amb aquest codi
+
+<img width="703" height="846" alt="image" src="https://github.com/user-attachments/assets/05f912c3-3875-4f52-83e4-c9a8ff90f1dd" />
+
+Despres he executat la api externa
+
+<img width="478" height="94" alt="image" src="https://github.com/user-attachments/assets/1d50553b-c4e3-47c0-9940-cbc073c753dc" />
+
+Ara he obert una segona terminal per enviar dades json 
+
+<img width="556" height="308" alt="image" src="https://github.com/user-attachments/assets/2262e198-6ded-4196-b085-62c6ca8b8e5d" />
+
+A la terminal on esta la API oberta es veu com a la imatge
+
+<img width="632" height="236" alt="image" src="https://github.com/user-attachments/assets/63449b70-cb05-4fe8-8f34-a8de6ac447b3" />
+
+Això demostra que una aplicació externa pot rebre dades d’un ERP en format JSON.
+
+Ara fare el mateix pero amb XML
+
+<img width="429" height="263" alt="image" src="https://github.com/user-attachments/assets/5f259d02-6dd4-4b04-9f8a-5a45454be486" />
+
+I a la terminal de l'API es veu com a la imatge:
+
+<img width="628" height="395" alt="image" src="https://github.com/user-attachments/assets/0008de84-9459-4817-ab5a-4f636da5f9e6" />
+
+Això demostra que també es poden moure dades en format XML.
+
 ### Què és EDI?
+
+<img width="1000" height="574" alt="image" src="https://github.com/user-attachments/assets/fc6ae22a-edc7-4ae3-a366-74b4438287b8" />
 
 L’**EDI** (*Electronic Data Interchange*) és l’intercanvi electrònic de documents comercials entre empreses seguint formats estandarditzats. Pot servir per enviar comandes, albarans, factures, avisos d’expedició o confirmacions de recepció sense haver d’introduir les dades manualment.
 
