@@ -1,10 +1,14 @@
 # Tasca de Recerca: Integració de Llenguatges de Marques en Sistemes ERP/CRM
 
+En l’actualitat, les empreses utilitzen sistemes ERP i CRM per centralitzar la gestió de les seves dades. Aquests sistemes no funcionen de manera aïllada, sinó que sovint s’han d’integrar amb bancs, botigues online, proveïdors, plataformes logístiques o administracions públiques. Per aquest motiu, els llenguatges de marques i formats d’intercanvi de dades, com XML, JSON, CSV o EDI, tenen un paper essencial en la comunicació entre sistemes.
+
 ## 1. Fonaments de Sistemes Empresarials
 
 ### Què és un ERP?
 
 Un **ERP** (*Enterprise Resource Planning*) és un sistema de gestió empresarial que integra diferents àrees d’una empresa en una mateixa plataforma: comptabilitat, compres, vendes, magatzem, recursos humans, producció, facturació, etc. La seva funció principal és centralitzar la informació perquè tots els departaments treballin amb les mateixes dades.
+
+<img width="1024" height="316" alt="image" src="https://github.com/user-attachments/assets/bdf95046-aa92-4c43-9f6b-eef0c1cd0228" />
 
 ### Què és un CRM?
 
@@ -23,6 +27,8 @@ Un **CRM** (*Customer Relationship Management*) és un sistema orientat a gestio
 |---|---|
 | Programari lliure / Open Source | SuiteCRM, Odoo CRM Community, EspoCRM |
 | Propietari | Salesforce, HubSpot CRM, Microsoft Dynamics 365 Sales |
+
+
 
 ### Instal·lació On-premise i SaaS
 
@@ -198,6 +204,8 @@ Un administrador de sistemes ASIX ha de conèixer els llenguatges de marques per
 Formats com **XML, JSON, CSV o EDI** permeten que les dades “viatgin” entre sistemes diferents. Per això, un tècnic d’ASIX ha de saber interpretar aquests formats, detectar errors d’importació, configurar integracions, revisar fitxers i entendre com es comuniquen les aplicacions.
 
 En resum, conèixer llenguatges de marques no és només saber escriure etiquetes XML o claus JSON, sinó entendre com es mou la informació dins d’una empresa real. Aquesta competència és molt important per mantenir sistemes ERP/CRM, automatitzar processos i evitar errors en dades crítiques com clients, factures, comandes o inventari.
+
+Personalment, crec que aquesta activitat m’ha ajudat a entendre que els llenguatges de marques no són només teoria, sinó una part molt important del funcionament real de les empreses. Quan un ERP importa productes amb CSV, envia factures en XML o rep comandes en JSON, està utilitzant estructures de dades que un administrador de sistemes ha de saber interpretar i mantenir. Per això, en el perfil d’ASIX, aquests coneixements són útils tant per resoldre errors com per configurar integracions entre plataformes.
 
 ---
 
