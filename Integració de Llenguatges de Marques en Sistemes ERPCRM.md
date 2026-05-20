@@ -14,6 +14,8 @@ Un **ERP** (*Enterprise Resource Planning*) és un sistema de gestió empresaria
 
 Un **CRM** (*Customer Relationship Management*) és un sistema orientat a gestionar la relació amb els clients. Serveix per controlar contactes, oportunitats de venda, seguiment comercial, incidències, campanyes de màrqueting i atenció al client.
 
+<img width="1000" height="1000" alt="image" src="https://github.com/user-attachments/assets/2b678a01-db99-4499-bdf9-fb7bee9d1958" />
+
 ### Exemples d’ERP
 
 | Tipus | Exemples |
