@@ -317,9 +317,166 @@ Ara he instalat alguns moduls de prova com CRM, ventas, inventario i facturació
 | Inventory | Gestiona productes i estoc                            |
 | Invoicing | Gestiona factures                                     |
 
+- Tot Seguit he creat 1 clients i 2 productes ficticis per fer les proves
+
+<img width="588" height="783" alt="image" src="https://github.com/user-attachments/assets/5b3e19f3-6ecc-4d92-82b5-c182e3ba0b07" />
+
+<img width="398" height="277" alt="image" src="https://github.com/user-attachments/assets/86194514-2598-4b92-aa56-599ffd95a9ab" />
+
+- Productes
+
+<img width="530" height="407" alt="image" src="https://github.com/user-attachments/assets/e46f13f8-a587-48a4-ac0a-1702f99ada9f" />
+
+<img width="434" height="314" alt="image" src="https://github.com/user-attachments/assets/077629ae-919a-4c81-9481-e4ee6a101def" />
+
+<img width="752" height="207" alt="image" src="https://github.com/user-attachments/assets/b2a1c68e-c895-4045-919e-e22dd7eb4d06" />
+
+--
+
+- Ara vaig a fer la prova de exportar dades en CSV
+
+<img width="322" height="298" alt="image" src="https://github.com/user-attachments/assets/99d96a7d-365c-4b88-ac54-e7f0bd648603" />
+
+Exportare alguns camps com aquests
+
+<img width="660" height="294" alt="image" src="https://github.com/user-attachments/assets/c3595f15-900a-474a-8e81-031f04f05c4c" />
+
+Despres d'exportar, veiem que conte els camps correctes
+
+<img width="593" height="124" alt="image" src="https://github.com/user-attachments/assets/a77c4d74-0642-4d5f-a516-ebf8baed9003" />
+
+Això demostra que Odoo pot treure dades en un format que després pot llegir una altra aplicació.
+
+- Prova de importacio de dades a Odoo, primer he creat un csv i he posat les seguents dades
+
+<img width="524" height="153" alt="image" src="https://github.com/user-attachments/assets/859f7506-04f6-4501-aa45-f7a0aa8de691" />
+
+<img width="350" height="130" alt="image" src="https://github.com/user-attachments/assets/c49b3c1b-4226-4a07-b30e-c92cb53dc3bd" />
+
+Veiem que s'han exportat correctament
+
+<img width="1112" height="328" alt="image" src="https://github.com/user-attachments/assets/d536227f-c0d2-43d0-bc09-8384a99e27dd" />
+
+Odoo pot importar dades externes en CSV i convertir-les en registres interns del sistema ERP.
+
+### Ús d’XML en Odoo
+
+A més del format CSV per importar i exportar dades, Odoo també utilitza el llenguatge **XML** en el desenvolupament dels seus mòduls. XML és molt important perquè permet definir l’estructura de diferents elements del sistema, com ara vistes, menús, accions, permisos o dades de configuració.
+
+En Odoo, un fitxer XML pot servir per indicar com s’ha de mostrar una pantalla dins de l’ERP. Per exemple, es pot definir quins camps apareixen en el formulari d’un client, quins botons hi ha disponibles o com s’organitzen els menús.
+
+Això demostra que XML no només s’utilitza per intercanviar dades entre aplicacions, sinó també per configurar i ampliar sistemes empresarials com un ERP.
+
+#### Exemple simplificat d’una vista XML en Odoo
+
+```xml
+<odoo>
+    <record id="view_partner_form_custom" model="ir.ui.view">
+        <field name="name">res.partner.form.custom</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <form string="Contacte">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="email"/>
+                        <field name="phone"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
+```
+#### Explicació del codi XML
+
+Aquest fragment XML representa una vista de formulari dins d’Odoo. Encara que és un exemple simplificat, ajuda a entendre com Odoo utilitza XML per definir parts de la seva interfície.
+
+En aquest cas, la vista està relacionada amb el model `res.partner`, que en Odoo s’utilitza per gestionar contactes, clients i proveïdors. El codi indica que el formulari ha de mostrar tres camps principals: el nom, el correu electrònic i el telèfon.
+
+| Element XML | Funció |
+|---|---|
+| `<odoo>` | És l’etiqueta principal del fitxer XML d’Odoo. Tot el contingut del fitxer queda dins d’aquesta etiqueta. |
+| `<record>` | Defineix un registre nou dins del sistema. En aquest cas, el registre correspon a una vista. |
+| `id="view_partner_form_custom"` | És l’identificador intern d’aquesta vista. Serveix perquè Odoo la pugui reconèixer. |
+| `model="ir.ui.view"` | Indica que el registre que s’està creant és una vista de la interfície d’Odoo. |
+| `<field name="name">` | Dona un nom tècnic a la vista. |
+| `<field name="model">res.partner</field>` | Indica que aquesta vista pertany al model de contactes, clients o proveïdors. |
+| `<field name="arch" type="xml">` | Conté l’estructura XML de la vista. |
+| `<form string="Contacte">` | Defineix que la vista serà un formulari amb el títol “Contacte”. |
+| `<sheet>` | Representa la zona principal del formulari. |
+| `<group>` | Agrupa diferents camps dins del formulari perquè es mostrin de manera ordenada. |
+| `<field name="name"/>` | Mostra el camp del nom del contacte. |
+| `<field name="email"/>` | Mostra el camp del correu electrònic. |
+| `<field name="phone"/>` | Mostra el camp del telèfon. |
+
+### Per què és important XML en Odoo?
+
+XML és important en Odoo perquè permet modificar i ampliar el sistema d’una manera estructurada. Gràcies a XML, un desenvolupador pot crear o modificar pantalles, afegir menús, definir accions o carregar dades inicials dins del sistema.
+
+Per exemple, si una empresa necessita que el formulari dels clients mostri uns camps concrets, es pot crear o modificar una vista XML. Això fa que Odoo sigui un ERP flexible i adaptable a les necessitats de cada empresa.
+
+A més, XML permet separar la part visual o estructural de la lògica del programa. És a dir, la lògica principal pot estar programada en Python, mentre que les vistes, menús i accions poden estar definides en fitxers XML.
+
+### Relació amb els mòduls d’Odoo
+
+Els mòduls d’Odoo són paquets que afegeixen funcionalitats al sistema. Per exemple, hi pot haver un mòdul de vendes, un de CRM, un d’inventari o un de facturació.
+
+Un mòdul d’Odoo pot incloure diferents tipus de fitxers:
+
+| Tipus de fitxer | Funció dins d’Odoo |
+|---|---|
+| Python | Defineix la lògica del mòdul i els models de dades. |
+| XML | Defineix vistes, formularis, menús, accions i dades de configuració. |
+| CSV | Serveix per carregar dades simples, com permisos o registres inicials. |
+| Fitxers de seguretat | Controlen quins usuaris poden accedir a cada part del sistema. |
+
+Per aquest motiu, el llenguatge XML és una peça clau en el desenvolupament de mòduls. Permet que Odoo entengui com s’han de mostrar les dades i com s’ha d’organitzar la interfície.
+
+### Importància dels llenguatges de marques en Odoo
+
+L’ús d’XML i CSV en Odoo demostra que els llenguatges de marques i els formats estructurats són essencials dins d’un ERP.
+
+El format **CSV** és útil per importar i exportar dades tabulars, com clients, productes o contactes. En canvi, el format **XML** és més adequat per definir estructures més complexes, com vistes, formularis, menús, accions o configuracions internes.
+
+| Format | Ús principal en Odoo | Exemple d’ús |
+|---|---|---|
+| CSV | Importació i exportació de dades simples | Llista de clients, productes o proveïdors |
+| XML | Definició d’estructures internes del sistema | Formularis, vistes, menús i accions |
+| JSON | Comunicació amb aplicacions externes mitjançant APIs | Enviament de dades a una botiga online o una app externa |
+
+Això és important perquè un administrador de sistemes o un tècnic d’ASIX pot necessitar revisar aquests fitxers per detectar errors, configurar importacions de dades o entendre com s’ha instal·lat un mòdul dins de l’ERP.
+
+### Exemple pràctic relacionat amb Odoo
+
+Un exemple realista seria una empresa que necessita importar una llista de clients a Odoo. Aquesta empresa podria preparar un fitxer CSV amb les dades dels clients i importar-lo directament dins del sistema.
+
+Exemple de fitxer CSV:
+
+```csv
+name,email,phone
+Client Prova 1,client1@example.com,977000001
+Client Prova 2,client2@example.com,977000002
+Client Prova 3,client3@example.com,977000003
+```
+
+Després d’importar aquest fitxer, Odoo crea automàticament els contactes dins del mòdul corresponent. Això evita haver d’introduir les dades manualment una per una.
+
+D’altra banda, si es vol modificar la forma com es mostra el formulari d’un client, es podria utilitzar XML per definir o adaptar aquesta vista.
+
+### Conclusió del cas pràctic d’Odoo
+
+Aquesta prova amb Odoo permet veure que un ERP no només serveix per gestionar informació empresarial, sinó que també necessita formats estructurats per importar, exportar i configurar dades.
+
+D’una banda, el CSV facilita el moviment de dades entre Odoo i altres aplicacions, com fulls de càlcul, altres ERP o scripts d’automatització. D’altra banda, XML permet definir parts internes del sistema, com les vistes, formularis i menús dels mòduls.
+
+Per tant, conèixer llenguatges de marques com XML i formats com CSV o JSON és molt útil per administrar i mantenir un sistema ERP. Aquests coneixements permeten entendre millor com es mouen les dades dins d’una empresa i com es poden integrar diferents aplicacions entre elles.
+
 ### Què són els mòduls?
 
 Els **mòduls** d’Odoo són paquets que afegeixen funcionalitats al sistema. Per exemple, hi pot haver un mòdul de vendes, un de comptabilitat, un de CRM, un d’inventari o un de recursos humans.
+
+<img width="697" height="590" alt="image" src="https://github.com/user-attachments/assets/91f3a223-09e2-4597-8fde-f6b7b99058c6" />
 
 Un mòdul pot incloure:
 
@@ -335,56 +492,218 @@ Un mòdul pot incloure:
 
 Les vistes d’Odoo es defineixen en fitxers XML, cosa que facilita modificar la interfície sense haver de canviar directament la lògica interna del programa.
 
-### Què és FacturaE?
+## Què és FacturaE?
 
-**FacturaE** és el format oficial de factura electrònica utilitzat a Espanya. Està basat en **XML**, és a dir, la factura no és només un PDF visual, sinó un fitxer estructurat amb etiquetes que indiquen les dades de l’emissor, el receptor, els imports, els impostos i les línies de factura.
+**FacturaE** és el format de factura electrònica utilitzat a Espanya. Es basa en el llenguatge **XML**, cosa que permet representar les dades d’una factura de manera estructurada i llegible per programes informàtics.
 
-La seva relació amb XML és directa: FacturaE utilitza una estructura XML perquè les factures puguin ser llegides automàticament per programes de facturació, administracions públiques i plataformes com FACe. En la facturació amb administracions públiques a Espanya, FacturaE continua sent un format clau per enviar factures electròniques.
+Una factura en format FacturaE no és simplement un PDF amb una factura visual, sinó un fitxer electrònic que conté etiquetes XML amb informació com:
 
-### Exemple simplificat d’estructura XML de factura
+- dades de l’emissor;
+- dades del receptor;
+- número de factura;
+- data d’emissió;
+- base imposable;
+- impostos;
+- import total;
+- línies de productes o serveis.
+
+A Espanya, les factures electròniques enviades a les administracions públiques han de seguir el format estructurat **FacturaE 3.2.x** i incloure signatura electrònica XAdES. Aquesta obligació es va establir amb la Llei 25/2013 per impulsar la factura electrònica en el sector públic.  
+Font: Portal oficial FacturaE: https://www.facturae.gob.es/formato
+
+### Relació entre FacturaE i XML
+
+FacturaE està directament relacionat amb XML perquè utilitza aquest llenguatge per organitzar la informació de la factura.
+
+Per exemple, una factura pot contenir etiquetes com:
+
+```xml
+<InvoiceNumber>F2026-001</InvoiceNumber>
+<IssueDate>2026-05-20</IssueDate>
+<TaxRate>21.00</TaxRate>
+<TotalGrossAmount>1450.00</TotalGrossAmount>
+```
+
+Aquestes etiquetes indiquen clarament quin és el número de factura, la data, el percentatge d’IVA i l’import total.
+
+Això permet que diferents sistemes, com un ERP, una administració pública o una plataforma de facturació, puguin llegir automàticament la factura sense haver d’introduir les dades manualment.
+
+### Exemple simplificat de FacturaE en XML
+
+A continuació es mostra un exemple molt simplificat d’una factura electrònica inspirada en el format FacturaE:
 
 ```xml
 <Facturae>
-  <FileHeader>
-    <SchemaVersion>3.2.2</SchemaVersion>
-    <Modality>I</Modality>
-    <InvoiceIssuerType>EM</InvoiceIssuerType>
-  </FileHeader>
+    <FileHeader>
+        <SchemaVersion>3.2.2</SchemaVersion>
+        <Modality>I</Modality>
+        <InvoiceIssuerType>EM</InvoiceIssuerType>
+    </FileHeader>
 
-  <Parties>
-    <SellerParty>
-      <TaxIdentification>
-        <TaxIdentificationNumber>B12345678</TaxIdentificationNumber>
-      </TaxIdentification>
-    </SellerParty>
+    <Parties>
+        <SellerParty>
+            <TaxIdentification>
+                <TaxIdentificationNumber>B12345678</TaxIdentificationNumber>
+            </TaxIdentification>
+            <LegalEntity>
+                <CorporateName>SecureLogistics S.L.</CorporateName>
+            </LegalEntity>
+        </SellerParty>
 
-    <BuyerParty>
-      <TaxIdentification>
-        <TaxIdentificationNumber>A87654321</TaxIdentificationNumber>
-      </TaxIdentification>
-    </BuyerParty>
-  </Parties>
+        <BuyerParty>
+            <TaxIdentification>
+                <TaxIdentificationNumber>A87654321</TaxIdentificationNumber>
+            </TaxIdentification>
+            <LegalEntity>
+                <CorporateName>Ajuntament de Roquetes</CorporateName>
+            </LegalEntity>
+        </BuyerParty>
+    </Parties>
 
-  <Invoices>
-    <Invoice>
-      <InvoiceHeader>
-        <InvoiceNumber>F2026-001</InvoiceNumber>
-      </InvoiceHeader>
-      <InvoiceIssueData>
-        <IssueDate>2026-05-20</IssueDate>
-      </InvoiceIssueData>
-      <TaxesOutputs>
-        <Tax>
-          <TaxTypeCode>01</TaxTypeCode>
-          <TaxRate>21.00</TaxRate>
-        </Tax>
-      </TaxesOutputs>
-    </Invoice>
-  </Invoices>
+    <Invoices>
+        <Invoice>
+            <InvoiceHeader>
+                <InvoiceNumber>F2026-001</InvoiceNumber>
+                <InvoiceSeriesCode>A</InvoiceSeriesCode>
+            </InvoiceHeader>
+
+            <InvoiceIssueData>
+                <IssueDate>2026-05-20</IssueDate>
+            </InvoiceIssueData>
+
+            <Items>
+                <InvoiceLine>
+                    <ItemDescription>Servei d'integració ERP</ItemDescription>
+                    <Quantity>1</Quantity>
+                    <UnitPriceWithoutTax>850.00</UnitPriceWithoutTax>
+                    <TotalCost>850.00</TotalCost>
+                </InvoiceLine>
+
+                <InvoiceLine>
+                    <ItemDescription>Llicència CRM anual</ItemDescription>
+                    <Quantity>5</Quantity>
+                    <UnitPriceWithoutTax>120.00</UnitPriceWithoutTax>
+                    <TotalCost>600.00</TotalCost>
+                </InvoiceLine>
+            </Items>
+
+            <InvoiceTotals>
+                <TotalGrossAmount>1450.00</TotalGrossAmount>
+                <TotalTaxOutputs>304.50</TotalTaxOutputs>
+                <InvoiceTotal>1754.50</InvoiceTotal>
+            </InvoiceTotals>
+        </Invoice>
+    </Invoices>
 </Facturae>
 ```
 
-Aquest exemple mostra que XML utilitza etiquetes per identificar cada part de la factura.
+### Explicació del codi XML
+
+| Element XML | Funció |
+|---|---|
+| `<Facturae>` | Etiqueta principal del document. |
+| `<FileHeader>` | Conté informació general del fitxer FacturaE. |
+| `<SchemaVersion>` | Indica la versió del format utilitzat, per exemple 3.2.2. |
+| `<Parties>` | Agrupa les dades de les parts que intervenen en la factura. |
+| `<SellerParty>` | Representa l’empresa o persona que emet la factura. |
+| `<BuyerParty>` | Representa el client o entitat que rep la factura. |
+| `<TaxIdentificationNumber>` | Conté el NIF o CIF de l’emissor o receptor. |
+| `<Invoices>` | Agrupa les factures incloses en el fitxer. |
+| `<InvoiceNumber>` | Número de factura. |
+| `<IssueDate>` | Data d’emissió de la factura. |
+| `<Items>` | Conté les línies de productes o serveis facturats. |
+| `<InvoiceLine>` | Representa una línia concreta de la factura. |
+| `<InvoiceTotals>` | Agrupa els imports totals de la factura. |
+| `<InvoiceTotal>` | Import final de la factura. |
+
+### Demostració pràctica en Ubuntu
+
+Per demostrar que FacturaE està basat en XML i que les seves dades poden ser llegides per una aplicació, es pot crear un fitxer XML i llegir-lo amb Python.
+
+Primer, creo un fitxer anomenat `facturae_exemple.xml`:
+
+```bash
+nano facturae_exemple.xml
+```
+
+Hi afegeixo el contingut XML anterior i guardo el fitxer.
+
+Després, creo un programa Python per llegir algunes dades de la factura:
+
+```bash
+nano llegir_facturae.py
+```
+
+Codi del programa:
+
+```python
+import xml.etree.ElementTree as ET
+
+arbre = ET.parse("facturae_exemple.xml")
+arrel = arbre.getroot()
+
+numero_factura = arrel.find(".//InvoiceNumber").text
+data_factura = arrel.find(".//IssueDate").text
+emissor = arrel.find(".//SellerParty/LegalEntity/CorporateName").text
+receptor = arrel.find(".//BuyerParty/LegalEntity/CorporateName").text
+total = arrel.find(".//InvoiceTotal").text
+
+print("=== FACTURA ELECTRÒNICA FACTURAE ===")
+print("Número de factura:", numero_factura)
+print("Data:", data_factura)
+print("Emissor:", emissor)
+print("Receptor:", receptor)
+print("Total factura:", total, "€")
+
+print("\nLínies de factura:")
+for linia in arrel.findall(".//InvoiceLine"):
+    descripcio = linia.find("ItemDescription").text
+    quantitat = linia.find("Quantity").text
+    preu = linia.find("UnitPriceWithoutTax").text
+    subtotal = linia.find("TotalCost").text
+
+    print("-", descripcio)
+    print("  Quantitat:", quantitat)
+    print("  Preu unitari sense IVA:", preu, "€")
+    print("  Subtotal:", subtotal, "€")
+```
+
+Executo el programa:
+
+```bash
+python3 llegir_facturae.py
+```
+
+Sortida esperada:
+
+```text
+=== FACTURA ELECTRÒNICA FACTURAE ===
+Número de factura: F2026-001
+Data: 2026-05-20
+Emissor: SecureLogistics S.L.
+Receptor: Ajuntament de Roquetes
+Total factura: 1754.50 €
+
+Línies de factura:
+- Servei d'integració ERP
+  Quantitat: 1
+  Preu unitari sense IVA: 850.00 €
+  Subtotal: 850.00 €
+- Llicència CRM anual
+  Quantitat: 5
+  Preu unitari sense IVA: 120.00 €
+  Subtotal: 600.00 €
+```
+
+### Relació amb ERP
+
+En un cas real, un ERP com Odoo, SAP o Microsoft Dynamics podria generar una factura amb les dades del client, els productes i els imports. Després, aquesta factura es podria exportar en format FacturaE per enviar-la a una administració pública o a una plataforma de facturació electrònica.
+
+Això demostra que XML és útil perquè permet que les dades d’una factura siguin llegides automàticament per diferents sistemes.
+
+
+FacturaE és un bon exemple de l’ús real de XML en l’àmbit empresarial i administratiu. Gràcies a aquest format, una factura electrònica pot ser processada automàticament per un ERP, una plataforma pública o un sistema de comptabilitat.
+
+Per aquest motiu, un administrador de sistemes ha de conèixer XML i entendre com s’estructuren aquests documents, ja que pot haver de configurar sistemes de facturació, revisar errors d’importació o comprovar que una factura electrònica compleix l’estructura correcta.
 
 ---
 
