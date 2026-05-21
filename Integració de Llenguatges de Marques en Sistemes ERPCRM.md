@@ -244,6 +244,8 @@ Aquesta pràctica demostra que JSON permet representar dades empresarials de for
 
 He triat **Odoo**, perquè és un ERP molt conegut i té una versió Community de codi obert. A més, és un bon exemple per veure la relació entre ERP, APIs, XML, CSV i mòduls.
 
+<img width="1500" height="1000" alt="image" src="https://github.com/user-attachments/assets/7bc3fa90-6a5c-4a99-a5d1-a9a1cbb86ae1" />
+
 ### Importació i exportació de dades en Odoo
 
 Odoo permet **importar i exportar dades** per modificar registres massivament, fer informes o traspassar informació entre sistemes. Disposa d’eines d’importació i exportació de dades dins de l’aplicació, especialment amb fitxers CSV o fulls de càlcul.
@@ -269,6 +271,24 @@ Empresa Demo,info@empresa-demo.cat,977111111
 ```
 
 A més, en el desenvolupament d’Odoo també s’utilitzen fitxers **XML** per definir dades, vistes, menús, accions i configuracions. Una de les formes principals de definir dades dins del sistema és mitjançant fitxers XML.
+
+## Cas pràctic: prova d’Odoo en Ubuntu
+
+Per desenvolupar l’apartat dedicat a Odoo, he instal·lat una versió d’Odoo Community en Ubuntu utilitzant Docker. Aquesta opció és adequada perquè permet executar Odoo i PostgreSQL en contenidors separats, sense modificar massa el sistema operatiu principal.
+
+### Instal·lació amb Docker
+
+La idea es instal·lar-lo amb Docker, crear un client/producte i provar importació/exportació CSV. Primer he creat una carpeta per al projecte:
+
+<img width="811" height="138" alt="image" src="https://github.com/user-attachments/assets/891ab9a3-96d9-4a9f-b4e9-a676c5b312e9" />
+
+<img width="389" height="69" alt="image" src="https://github.com/user-attachments/assets/27007d43-a8bd-46ef-b974-02ebb7d3461f" />
+
+<img width="187" height="82" alt="image" src="https://github.com/user-attachments/assets/c1485aa3-b9c5-4632-981e-c3deed681445" />
+
+Despres he creat el .yml 
+
+<img width="467" height="668" alt="image" src="https://github.com/user-attachments/assets/a954c28b-c14d-497c-8c3e-d7c823532234" />
 
 ### Què són els mòduls?
 
