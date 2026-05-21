@@ -290,6 +290,33 @@ Despres he creat el .yml
 
 <img width="467" height="668" alt="image" src="https://github.com/user-attachments/assets/a954c28b-c14d-497c-8c3e-d7c823532234" />
 
+Ara he iniciat el docker
+
+<img width="426" height="267" alt="image" src="https://github.com/user-attachments/assets/9e4b7eb8-a084-4a03-b44a-36e0518ef65b" />
+
+I entrem al localhost desde la web per entrar a odoo, i demana crear una base de dades, he posat les dades seguents:
+
+<img width="947" height="1005" alt="image" src="https://github.com/user-attachments/assets/d78d607b-7393-4897-8f18-f97c3135502d" />
+
+Ara he instalat alguns moduls de prova com CRM, ventas, inventario i facturación
+
+<img width="901" height="407" alt="image" src="https://github.com/user-attachments/assets/26512c59-5aa5-427d-97e9-5f1cef617865" />
+
+<img width="352" height="115" alt="image" src="https://github.com/user-attachments/assets/53954c2b-f234-4da2-be56-a51218f4c7f3" />
+
+
+<img width="354" height="124" alt="image" src="https://github.com/user-attachments/assets/6154df6a-fab3-4f72-9591-b8033ff29484" />
+
+
+<img width="376" height="114" alt="image" src="https://github.com/user-attachments/assets/63327c94-7958-4042-a8f8-ef07f9e1b1a9" />
+
+| Mòdul     | Funció                                                |
+| --------- | ----------------------------------------------------- |
+| CRM       | Gestiona oportunitats comercials i clients potencials |
+| Sales     | Gestiona pressupostos i comandes de venda             |
+| Inventory | Gestiona productes i estoc                            |
+| Invoicing | Gestiona factures                                     |
+
 ### Què són els mòduls?
 
 Els **mòduls** d’Odoo són paquets que afegeixen funcionalitats al sistema. Per exemple, hi pot haver un mòdul de vendes, un de comptabilitat, un de CRM, un d’inventari o un de recursos humans.
