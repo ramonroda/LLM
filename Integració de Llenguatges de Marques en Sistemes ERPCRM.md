@@ -673,26 +673,8 @@ Executo el programa:
 python3 llegir_facturae.py
 ```
 
-Sortida esperada:
+<img width="417" height="411" alt="image" src="https://github.com/user-attachments/assets/945a2563-10da-4c0f-b0f9-4e10265a0e3f" />
 
-```text
-=== FACTURA ELECTRÒNICA FACTURAE ===
-Número de factura: F2026-001
-Data: 2026-05-20
-Emissor: SecureLogistics S.L.
-Receptor: Ajuntament de Roquetes
-Total factura: 1754.50 €
-
-Línies de factura:
-- Servei d'integració ERP
-  Quantitat: 1
-  Preu unitari sense IVA: 850.00 €
-  Subtotal: 850.00 €
-- Llicència CRM anual
-  Quantitat: 5
-  Preu unitari sense IVA: 120.00 €
-  Subtotal: 600.00 €
-```
 
 ### Relació amb ERP
 
