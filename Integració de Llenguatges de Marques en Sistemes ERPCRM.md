@@ -615,7 +615,7 @@ A continuació es mostra un exemple molt simplificat d’una factura electrònic
 | `<InvoiceTotals>` | Agrupa els imports totals de la factura. |
 | `<InvoiceTotal>` | Import final de la factura. |
 
-### Demostració pràctica en Ubuntu
+### Demostració pràctica 
 
 Per demostrar que FacturaE està basat en XML i que les seves dades poden ser llegides per una aplicació, es pot crear un fitxer XML i llegir-lo amb Python.
 
