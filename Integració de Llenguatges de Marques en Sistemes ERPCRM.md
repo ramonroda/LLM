@@ -272,7 +272,7 @@ Empresa Demo,info@empresa-demo.cat,977111111
 
 A més, en el desenvolupament d’Odoo també s’utilitzen fitxers **XML** per definir dades, vistes, menús, accions i configuracions. Una de les formes principals de definir dades dins del sistema és mitjançant fitxers XML.
 
-## Cas pràctic: prova d’Odoo en Ubuntu
+## Cas pràctic: prova d’Odoo 
 
 Per desenvolupar l’apartat dedicat a Odoo, he instal·lat una versió d’Odoo Community en Ubuntu utilitzant Docker. Aquesta opció és adequada perquè permet executar Odoo i PostgreSQL en contenidors separats, sense modificar massa el sistema operatiu principal.
 
